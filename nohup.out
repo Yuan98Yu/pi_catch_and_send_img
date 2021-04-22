@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "main.py", line 27, in <module>
+    main()
+  File "main.py", line 14, in main
+    asyncio.get_event_loop().run_until_complete(get_and_send_img(camera))
+  File "/home/pi/berryconda3/lib/python3.6/asyncio/base_events.py", line 466, in run_until_complete
+    return future.result()
+  File "main.py", line 19, in get_and_send_img
+    async with websockets.connect(ws_algorithm_server_url) as websocket:
+  File "/home/pi/berryconda3/lib/python3.6/site-packages/websockets/client.py", line 517, in __aenter__
+    return await self
+  File "/home/pi/berryconda3/lib/python3.6/site-packages/websockets/client.py", line 535, in __await_impl__
+    transport, protocol = await self._create_connection()
+  File "/home/pi/berryconda3/lib/python3.6/asyncio/base_events.py", line 732, in create_connection
+    infos = f1.result()
+  File "/home/pi/berryconda3/lib/python3.6/concurrent/futures/thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pi/berryconda3/lib/python3.6/socket.py", line 743, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution

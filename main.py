@@ -11,8 +11,11 @@ from config import ws_algorithm_server_url
 def main():
     camera = Camera()
     while True:
+        try:
+            asyncio.get_event_loop().run_until_complete(get_and_send_img(camera))
+        except Exception as e:
+            print(e)
         time.sleep(20)
-        asyncio.get_event_loop().run_until_complete(get_and_send_img(camera))
 
 
 async def get_and_send_img(camera: Camera):
